@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 
 
 url_list = {}
-api_key = "https://185.53.88.104/?s={query.replace"
+api_key = "35c2e2a10caec1e689367f0e94f375afd2a7a721"
 
 
 def search_movies(query):
@@ -15,7 +15,7 @@ def search_movies(query):
         if movie:
             movies_details["id"] = f"link{movies.index(movie)}"
             movies_details["title"] = movie.find("span", {'class': 'mli-info'}).text
-            url_list[movies_details["id"]] = movie['href']
+        url_list[movies_details["id"]] = movie['href']
         movies_list.append(movies_details)
         movies_details = {}
     return movies_list
